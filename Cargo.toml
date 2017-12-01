@@ -1,0 +1,23 @@
+[package]
+authors = [
+    "Metaswitch Networks Ltd",
+]
+categories = [
+    "development-tools",
+    "development-tools::cargo-plugins",
+]
+description = "A cargo subcommand to make it easy to generate Rust cratyes from swagger specs"
+homepage = "https://github.com/Metaswitch/cargo-swagger"
+keywords = ["swagger"]
+license = "Apache-2.0/MIT"
+name = "cargo-swagger"
+readme = "README.md"
+repository = "https://github.com/Metaswitch/cargo-swagger"
+version = "0.1.0"
+
+[dependencies]
+docopt = "0.8.1"
+error-chain = "0.11.0"
+serde = "1.0.21"
+serde_derive = "1.0.21"
+serde_yaml = "0.7.3"
