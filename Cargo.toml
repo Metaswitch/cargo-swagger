@@ -15,6 +15,9 @@ readme = "README.md"
 repository = "https://github.com/Metaswitch/cargo-swagger"
 version = "0.1.0"
 
+[badges]
+travis-ci = { repository = "Metaswitch/cargo-swagger", branch = "master" }
+
 [dependencies]
 docopt = "0.8.3"
 error-chain = "0.11.0"
