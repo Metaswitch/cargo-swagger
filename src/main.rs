@@ -25,18 +25,19 @@ const USAGE: &str = r"
 Generate a Rust crate from a swagger spec using swagger-codegen
 
 Usage:
-    cargo swagger <spec-path> <output-path>
+    cargo swagger <spec-path> <output-path> [--docker-tag=<tag>]
     cargo swagger (-h | --help)
     cargo swagger (-V | --version)
 
 Options:
     -h --help                   Show this help page.
     -V --version                Show version.
+    --docker-tag=<tag>          Container tag [default: latest]
 
 Requires Docker to be installed.
 ";
 
-const RUST_GEN_CONTAINER: &str = "swaggerapi/swagger-codegen-cli:latest";
+const RUST_GEN_CONTAINER: &str = "swaggerapi/swagger-codegen-cli";
 
 /// Docopts input args.
 #[derive(Debug, Deserialize)]
@@ -44,6 +45,7 @@ struct Args {
     arg_spec_path: String,
     arg_output_path: String,
     flag_version: bool,
+    flag_docker_tag: String,
 }
 
 fn main() {
@@ -87,7 +89,7 @@ fn main() {
             "run",
             "-v",
             &format!("{}:{}", output_dir.to_string_lossy(), "/tmp/swagger"),
-            RUST_GEN_CONTAINER,
+            &format!("{}:{}", RUST_GEN_CONTAINER, args.flag_docker_tag),
             "generate",
             "--lang",
             "rust-server",
