@@ -19,7 +19,7 @@ version = "0.1.0"
 travis-ci = { repository = "Metaswitch/cargo-swagger", branch = "master" }
 
 [dependencies]
-docopt = "0.8.3"
+docopt = "1.1.0"
 error-chain = "0.11.0"
 serde = "1.0.38"
 serde_derive = "1.0.38"
