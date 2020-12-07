@@ -22,5 +22,5 @@ travis-ci = { repository = "Metaswitch/cargo-swagger", branch = "master" }
 docopt = "0.8.3"
 error-chain = "0.11.0"
 serde = "1.0.38"
-serde_derive = "1.0.38"
+serde_derive = "1.0.118"
 serde_yaml = "0.7.3"
